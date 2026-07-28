@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jomo-playground.github.io/FitQ/sitemap.xml
+Sitemap: https://jomo-playground.github.io/FitQuest-Legal/sitemap.xml
