@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">FitQuest mark</title>
+  <desc id="desc">An original F made from three forward-cut blades interlocked with a broken Q progress ring.</desc>
+  <rect width="512" height="512" rx="112" fill="#050807"/>
+  <path d="M393 375A122 122 0 1 1 433 189" fill="none" stroke="#F4F5F1" stroke-width="50"/>
+  <path d="M450 269A122 122 0 0 1 435 327" fill="none" stroke="#F4F5F1" stroke-width="50"/>
+  <polygon points="376,346 411,322 462,405 428,428" fill="#F4F5F1"/>
+  <polygon points="410,190 466,190 435,240 379,240" fill="#10B981"/>
+  <polygon points="104,134 302,134 268,190 70,190" fill="#F4F5F1"/>
+  <polygon points="80,220 267,220 232,278 45,278" fill="#F4F5F1"/>
+  <polygon points="92,307 154,307 91,399 27,399" fill="#F4F5F1"/>
+</svg>

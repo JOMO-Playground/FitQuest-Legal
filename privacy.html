@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="FitQuest Privacy Policy: local fitness data, optional account, Coach, activity, backup, purchase, retention, and deletion practices.">
+  <meta name="theme-color" content="#050807">
+  <title>Privacy Policy — FitQuest</title>
+  <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/release.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <nav aria-label="Primary"><a href="index.html">Home</a><a href="support.html">Support</a><a aria-current="page" href="privacy.html">Privacy</a></nav>
+  </header>
+  <main class="document">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="document-lede">Effective 28 July 2026. This policy describes the FitQuest Android application and this website. It does not claim that optional services are active when a particular build has them disabled.</p>
+
+    <section class="callout">
+      <strong>Privacy at a glance</strong>
+      <p>Your core fitness database is stored on your device. FitQuest also offers optional account and network features. When you use one, the relevant data leaves the device for the specific purpose described below.</p>
+    </section>
+
+    <section class="panel prose">
+      <h2>1. Who we are</h2>
+      <p>“FitQuest,” “we,” and “us” refer to the developer and operator of the FitQuest application, based in the Kingdom of Lesotho. Privacy questions can be sent to <a href="mailto:fitquestsupp0rt@gmail.com">fitquestsupp0rt@gmail.com</a>.</p>
+
+      <h2>2. Data kept on your device</h2>
+      <p>Depending on what you enter or use, FitQuest stores profile and training preferences, goals, body measurements, routines, workout sessions and set evidence, readiness and effort responses, progression and achievements, steps, user-started GPS activity and route samples, Coach conversation history, exercise favourites, progress-photo files and metadata, app settings, and feedback drafts in app-owned storage.</p>
+      <p>Some of this information—particularly health, body, activity, route, and photo information—is sensitive. You decide what to enter and which permissions to grant.</p>
+
+      <h2>3. Optional account and authentication</h2>
+      <p>If you create or use an account, your email address, password verifier, account identifier, and session information are processed by Supabase Auth. The app stores the session using Android-protected application storage. We do not receive your plaintext password.</p>
+
+      <h2>4. Coach requests</h2>
+      <p>When you are signed in, connected, and choose cloud Coach, your message and a bounded set of relevant fitness context are sent over an encrypted connection to a Supabase Edge Function. That function authenticates the request and sends it to a configured free text model through OpenRouter. Do not submit medical records or information you do not want processed by those services. Offline Coach guidance remains on the device and is labelled as offline.</p>
+
+      <h2>5. Activity, sensors, and location</h2>
+      <p>With permission, FitQuest can read step information from Android activity sensors or Health Connect. Health Connect permissions are read-only and limited to data types the feature visibly uses. A foreground sensor fallback may cover only the time FitQuest is open and is labelled as partial.</p>
+      <p>Location is requested when you start a GPS activity. FitQuest uses location samples to calculate and display that activity. The first closed-testing release does not use background location for passive step tracking. Route data remains local unless a future, separately disclosed backup feature includes it and you enable that feature.</p>
+
+      <h2>6. Photos and media</h2>
+      <p>Profile and progress photos you choose are copied into app-owned device storage. FitQuest exercise guidance can use bundled reviewed images or fetch reviewed public-domain exercise images from a pinned GitHub-hosted repository. A remote image request necessarily reveals standard network information such as IP address and user agent to the host.</p>
+
+      <h2>7. Cloud backup</h2>
+      <p>Cloud backup is controlled by a release feature flag and is disabled in the initial closed-test configuration unless the app explicitly says otherwise. When enabled and chosen, a JSON snapshot is uploaded to a private Supabase Storage path scoped to the signed-in account. The app shows the backup boundary before upload.</p>
+
+      <h2>8. Purchases</h2>
+      <p>When paid subscriptions are enabled, Google Play processes payment and RevenueCat processes purchase and entitlement information, including an app user identifier, product, purchase status, and renewal/expiration state. FitQuest does not receive full payment-card details. Purchase controls remain unavailable in builds that have not passed store sandbox qualification.</p>
+
+      <h2>9. Analytics and diagnostics</h2>
+      <p>The initial release does not send product analytics or crash reports to an external analytics provider. Development logs are not a promise about a future build; if analytics or crash reporting is later enabled, this policy and the Play Data Safety form must be updated before release.</p>
+
+      <h2>10. Why we use data</h2>
+      <p>We use information to provide workouts, preserve sessions, calculate fitness estimates, adapt progression, show activity evidence, answer Coach requests you initiate, authenticate accounts, restore purchases, protect the service, respond to support, and comply with law. We do not sell personal data.</p>
+
+      <h2>11. Retention and deletion</h2>
+      <p>Local data remains until you delete it in FitQuest or uninstall the app, subject to Android backup behaviour outside our control. Auth data remains until the account is deleted. Optional backups remain until deleted with the account or under the applicable service-retention process. Service providers may retain limited security, billing, or legal records under their own obligations.</p>
+      <p>Use <strong>Profile → Data &amp; Privacy</strong> to export or erase local data. Signed-in users can request account deletion there. You can also follow the public instructions on the <a href="delete-account.html">Delete account page</a>.</p>
+
+      <h2>12. Security</h2>
+      <p>We use platform application isolation, protected session storage, encrypted transport for network features, private storage policies, server-side authentication, and release scanning. No system is perfectly secure. Keep your device and email account protected and contact us if you believe your account is at risk.</p>
+
+      <h2>13. Children</h2>
+      <p>The initial release is intended for adults and is not directed to children. Do not create an account for a child or submit a child’s health or location data.</p>
+
+      <h2>14. International processing and service providers</h2>
+      <p>Supabase, OpenRouter and the selected model provider, GitHub, Google Play, and RevenueCat may process data in countries outside Lesotho. Their contractual and legal safeguards apply to their processing.</p>
+
+      <h2>15. Changes and contact</h2>
+      <p>We will update the effective date and publish material changes before they apply. Contact <a href="mailto:fitquestsupp0rt@gmail.com">fitquestsupp0rt@gmail.com</a> with privacy requests.</p>
+    </section>
+  </main>
+  <footer>
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a></div>
+    <p>© 2026 FitQuest.</p>
+  </footer>
+</body>
+</html>

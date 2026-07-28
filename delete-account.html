@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Request deletion of a FitQuest account and understand what is removed.">
+  <meta name="theme-color" content="#050807">
+  <title>Delete your account — FitQuest</title>
+  <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/release.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <nav aria-label="Primary"><a href="index.html">Home</a><a href="support.html">Support</a><a aria-current="page" href="delete-account.html">Delete account</a></nav>
+  </header>
+  <main class="document narrow">
+    <p class="eyebrow">Account control</p>
+    <h1>Delete your FitQuest account.</h1>
+    <p class="document-lede">Account deletion is permanent. It is separate from erasing the fitness database stored on a particular device.</p>
+
+    <section class="panel prose">
+      <h2>Fastest: delete inside FitQuest</h2>
+      <ol>
+        <li>Open <strong>Profile</strong>.</li>
+        <li>Open <strong>Data &amp; Privacy</strong>.</li>
+        <li>Choose <strong>Delete account and device data</strong>.</li>
+        <li>Read the impact, type the exact confirmation, and confirm.</li>
+      </ol>
+      <p>The app authenticates the request, deletes owned remote backup objects where present, deletes the Supabase Auth account, disconnects subscription identity, and clears FitQuest-owned local data. Google Play subscriptions must still be cancelled in Google Play.</p>
+    </section>
+
+    <section class="panel prose">
+      <h2>Request deletion without the app</h2>
+      <p>Email us from the same address used for the FitQuest account. Use the subject <strong>FitQuest account deletion request</strong>. We will verify control of the account before deletion and will never ask for your password.</p>
+      <a class="button danger" href="mailto:fitquestsupp0rt@gmail.com?subject=FitQuest%20account%20deletion%20request&body=FitQuest%20account%20email%3A%20%0A%0AI%20request%20permanent%20deletion%20of%20this%20FitQuest%20account.%20I%20understand%20that%20Google%20Play%20subscriptions%20must%20be%20cancelled%20separately.">Start deletion request</a>
+    </section>
+
+    <section class="panel prose">
+      <h2>What is deleted</h2>
+      <ul>
+        <li>Supabase Auth account and active FitQuest sessions.</li>
+        <li>FitQuest cloud backup objects owned by that account, if the feature was enabled and used.</li>
+        <li>RevenueCat customer association where the integration is configured; legally required billing records may remain with Google Play or service providers.</li>
+        <li>App-owned local data and media when deletion is completed in the app.</li>
+      </ul>
+      <h2>What is not automatically deleted</h2>
+      <ul>
+        <li>A Google Play subscription or Play purchase history.</li>
+        <li>Data you previously exported or shared to another app or destination.</li>
+        <li>Service security, fraud-prevention, billing, or legal records that a provider must retain.</li>
+        <li>Local data on another device unless you erase it there or uninstall FitQuest.</li>
+      </ul>
+    </section>
+
+    <section class="callout warning">
+      <strong>Using FitQuest without an account?</strong>
+      <p>There is no remote account to delete. Use Profile → Data &amp; Privacy → Erase this device, or uninstall the app. Uninstall behaviour can be affected by Android backup settings.</p>
+    </section>
+  </main>
+  <footer>
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a></div>
+    <p>© 2026 FitQuest.</p>
+  </footer>
+</body>
+</html>

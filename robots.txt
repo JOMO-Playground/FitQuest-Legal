@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jomo-playground.github.io/FitQ/sitemap.xml

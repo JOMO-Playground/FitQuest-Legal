@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Continue a verified FitQuest password reset in the Android app.">
+  <meta name="theme-color" content="#050807">
+  <title>Reset your password — FitQuest</title>
+  <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/release.css">
+</head>
+<body>
+  <main class="recovery-shell">
+    <section class="recovery-card">
+      <div class="recovery-mark"><img src="brand-mark.svg" alt="FitQuest"></div>
+      <p class="eyebrow">Verified recovery</p>
+      <h1>Continue in FitQuest.</h1>
+      <p id="recovery-message">Your recovery link is ready. Open FitQuest on this Android device to choose a new password.</p>
+      <button class="button primary full" id="open-app" type="button">Open FitQuest</button>
+      <a class="button secondary full" href="support.html">I need help</a>
+      <p class="fine">FitQuest will never ask you to enter the old password on this website.</p>
+    </section>
+  </main>
+  <script>
+    (function () {
+      var button = document.getElementById('open-app');
+      var message = document.getElementById('recovery-message');
+      var params = new URLSearchParams(window.location.search);
+      var hash = window.location.hash || '';
+      var hasCredential = hash.indexOf('access_token=') !== -1 || params.has('code') || params.has('token_hash');
+      var hasError = params.has('error') || hash.indexOf('error=') !== -1;
+      var appUrl = 'fitquest://update-password' + window.location.search + hash;
+
+      if (hasError) {
+        message.textContent = 'This recovery link is invalid or expired. Return to FitQuest, request a new password-reset email, and use only the newest link.';
+        button.textContent = 'Return to FitQuest';
+        appUrl = 'fitquest://login';
+      } else if (!hasCredential) {
+        message.textContent = 'This page needs a verified recovery link from your email. Return to FitQuest and request a new password-reset email.';
+        button.textContent = 'Return to FitQuest';
+        appUrl = 'fitquest://login';
+      }
+
+      button.addEventListener('click', function () {
+        window.location.assign(appUrl);
+      });
+    }());
+  </script>
+</body>
+</html>
