@@ -8,6 +8,7 @@
   <title>Privacy Policy — FitQuest</title>
   <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/release.css">
+  <script src="js/site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -33,7 +34,7 @@
       <p>Some of this information—particularly health, body, activity, route, and photo information—is sensitive. You decide what to enter and which permissions to grant.</p>
 
       <h2>3. Optional account and authentication</h2>
-      <p>If you create or use an account, your email address, password verifier, account identifier, and session information are processed by Supabase Auth. The app stores the session using Android-protected application storage. We do not receive your plaintext password.</p>
+      <p>If you create or use an account, your email address, password verifier, account identifier, and session information are processed by Supabase Auth. The Android app stores its session using protected application storage. The website account portal stores its session in that browser until you sign out or clear site data. We do not receive your plaintext password.</p>
 
       <h2>4. Coach requests</h2>
       <p>When you are signed in, connected, and choose cloud Coach, your message and a bounded set of relevant fitness context are sent over an encrypted connection to a Supabase Edge Function. That function authenticates the request and sends it to a configured free text model through OpenRouter. Do not submit medical records or information you do not want processed by those services. Offline Coach guidance remains on the device and is labelled as offline.</p>
@@ -45,8 +46,9 @@
       <h2>6. Photos and media</h2>
       <p>Profile and progress photos you choose are copied into app-owned device storage. FitQuest exercise guidance can use bundled reviewed images or fetch reviewed public-domain exercise images from a pinned GitHub-hosted repository. A remote image request necessarily reveals standard network information such as IP address and user agent to the host.</p>
 
-      <h2>7. Cloud backup</h2>
-      <p>Cloud backup is controlled by a release feature flag and is disabled in the initial closed-test configuration unless the app explicitly says otherwise. When enabled and chosen, a JSON snapshot is uploaded to a private Supabase Storage path scoped to the signed-in account. The app shows the backup boundary before upload.</p>
+      <h2>7. Cloud backup and the account portal</h2>
+      <p>Cloud backup is controlled by a release feature flag and remains disabled until the app explicitly says otherwise. When enabled, FitQuest can upload a JSON snapshot to a private Supabase Storage path scoped to the signed-in account. Established devices require a manual restore; a device without irreplaceable local evidence may restore the latest verified snapshot automatically after sign-in.</p>
+      <p>After you sign in on the website, the My Quest portal can download your latest account-scoped snapshot into browser memory and show a read-only summary such as level, workouts, steps, goals, streak, and planned quest. The portal does not write to the app database or restore a phone. You may deliberately download the JSON snapshot. The pinned Supabase browser library is delivered by jsDelivr, which receives ordinary request information such as IP address and user agent.</p>
 
       <h2>8. Purchases</h2>
       <p>When paid subscriptions are enabled, Google Play processes payment and RevenueCat processes purchase and entitlement information, including an app user identifier, product, purchase status, and renewal/expiration state. FitQuest does not receive full payment-card details. Purchase controls remain unavailable in builds that have not passed store sandbox qualification.</p>

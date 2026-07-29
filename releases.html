@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="FitQuest release announcements, testing status, and verified product changes.">
+  <meta name="theme-color" content="#050807">
+  <title>Releases — FitQuest</title>
+  <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/release.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <nav aria-label="Primary"></nav>
+  </header>
+
+  <main class="document releases-document">
+    <p class="eyebrow"><span class="signal"></span> Release signal</p>
+    <h1>What changed.<br>What is proven.</h1>
+    <p class="document-lede">This is the public release record for testers. FitQuest separates implemented behavior, verified behavior, and work that is still gated.</p>
+
+    <section class="release-hero">
+      <div>
+        <span class="release-badge">Internal testing</span>
+        <p class="eyebrow">Version 2.1.0 · Android code 6</p>
+        <h2>The first Play-qualified quest engine.</h2>
+        <p>Progressive workout generation, recoverable sessions, evidence-backed levels, improved daily movement sourcing, account recovery, and the new Quest Cut identity are in the internal-test bundle.</p>
+      </div>
+      <div class="release-mark"><img src="brand-mark.svg" alt="FitQuest"></div>
+    </section>
+
+    <section class="release-grid">
+      <article class="panel">
+        <span class="index">CORE</span>
+        <h3>Quest progression</h3>
+        <p>Workouts move through readiness, warm-up, main work, cooldown, and debrief. Difficulty responds to completed evidence and recovery—not button taps.</p>
+      </article>
+      <article class="panel">
+        <span class="index">MOVE</span>
+        <h3>Honest movement data</h3>
+        <p>Health Connect is preferred for all-day Android Steps. The foreground sensor remains available and visibly labelled as partial.</p>
+      </article>
+      <article class="panel">
+        <span class="index">SAFE</span>
+        <h3>Recovery routes</h3>
+        <p>Password-reset links now reach a public bridge back into FitQuest. Remote account deletion and local device erasure remain separate actions.</p>
+      </article>
+      <article class="panel">
+        <span class="index">NEXT</span>
+        <h3>Cloud recovery gate</h3>
+        <p>Automatic and manual restore logic is implemented. Production backup activation remains blocked until private-bucket owner isolation passes its two-user smoke test.</p>
+      </article>
+    </section>
+
+    <section class="timeline" aria-labelledby="release-timeline-title">
+      <p class="eyebrow">Build trail</p>
+      <h2 id="release-timeline-title">A release earns its state.</h2>
+      <ol>
+        <li><span>29 Jul</span><div><strong>2.1.0 qualified</strong><p>Bundletool validation, dedicated upload signing, SDK/permission inspection, static export, and product regressions passed.</p></div></li>
+        <li><span>29 Jul</span><div><strong>Recovery and legal surface</strong><p>Public password recovery, truthful legal pages, and authenticated deletion ownership were deployed.</p></div></li>
+        <li><span>28 Jul</span><div><strong>2.0.4 preview</strong><p>The clean release lineage and upgrade-compatible signing path were verified before the Play bundle.</p></div></li>
+      </ol>
+    </section>
+
+    <section class="cta compact">
+      <p class="eyebrow">Be part of the proof</p>
+      <h2>Test the quest, then tell us where it breaks.</h2>
+      <p>Use the same Google account enrolled in the internal-testing group. Never send passwords, recovery tokens, or a full fitness export by email.</p>
+      <div class="actions">
+        <a class="button primary" href="mailto:fitquestsupp0rt@gmail.com?subject=FitQuest%20internal%20testing">Request tester access</a>
+        <a class="button secondary" href="support.html">Report an issue</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a></div>
+    <p>© <span data-current-year>2026</span> FitQuest.</p>
+  </footer>
+</body>
+</html>

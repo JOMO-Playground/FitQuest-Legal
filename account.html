@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Sign in to the FitQuest account portal to view a private summary of your latest backed-up quest evidence.">
+  <meta name="theme-color" content="#050807">
+  <title>My Quest — FitQuest</title>
+  <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/release.css">
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <nav aria-label="Primary"></nav>
+  </header>
+
+  <main class="account-shell">
+    <section class="account-intro">
+      <p class="eyebrow"><span class="signal"></span> Private account portal</p>
+      <h1>Your quest.<br><span>Still yours.</span></h1>
+      <p class="lede">Review the latest evidence you deliberately backed up. The website never starts a workout and never writes into your phone’s local database.</p>
+      <div class="trust-row">
+        <span>Private bucket</span>
+        <span>Account-scoped access</span>
+        <span>No advertising profile</span>
+      </div>
+    </section>
+
+    <section class="auth-card" id="auth-panel" aria-labelledby="auth-title">
+      <div class="auth-tabs" role="tablist" aria-label="Account action">
+        <button class="auth-tab active" id="sign-in-tab" type="button" role="tab" aria-selected="true">Sign in</button>
+        <button class="auth-tab" id="sign-up-tab" type="button" role="tab" aria-selected="false">Create account</button>
+      </div>
+      <p class="eyebrow" id="auth-kicker">Continue your quest</p>
+      <h2 id="auth-title">Sign in securely.</h2>
+      <p class="auth-copy" id="auth-copy">Use the same email and password as the FitQuest Android app.</p>
+      <form id="auth-form" novalidate>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" required>
+        <button class="button primary full" id="auth-submit" type="submit">Sign in</button>
+      </form>
+      <button class="text-button" id="forgot-password" type="button">Send a password-reset link</button>
+      <p class="form-status" id="auth-status" role="status" aria-live="polite"></p>
+      <p class="fine">Account credentials are handled by Supabase Auth over HTTPS. FitQuest never receives your plaintext password.</p>
+    </section>
+
+    <section class="portal" id="portal" hidden aria-labelledby="portal-title">
+      <div class="portal-header">
+        <div>
+          <p class="eyebrow">Latest verified snapshot</p>
+          <h2 id="portal-title">Welcome back, <span id="athlete-name">Athlete</span>.</h2>
+          <p class="section-intro" id="snapshot-time">Looking for your latest cloud backup…</p>
+        </div>
+        <button class="button secondary" id="sign-out" type="button">Sign out</button>
+      </div>
+
+      <div class="level-deck">
+        <div class="level-orbit">
+          <img src="brand-mark.svg" alt="">
+          <span>LEVEL</span>
+          <strong id="metric-level">1</strong>
+        </div>
+        <div class="level-copy">
+          <p class="eyebrow">Progression</p>
+          <h3 id="level-title">Foundation</h3>
+          <p id="level-detail">Your completed evidence will move this level.</p>
+          <div class="progress-track" aria-label="Level progress"><span id="level-progress"></span></div>
+          <small id="level-xp">0 XP</small>
+        </div>
+      </div>
+
+      <div class="metric-grid" aria-label="Backed-up fitness summary">
+        <article class="metric-card"><span>Completed quests</span><strong id="metric-workouts">0</strong><small id="metric-training-time">0 training minutes</small></article>
+        <article class="metric-card"><span>Measured steps</span><strong id="metric-steps">0</strong><small>From backed-up daily evidence</small></article>
+        <article class="metric-card"><span>Active goals</span><strong id="metric-goals">0</strong><small id="metric-goal-detail">No active goal in this snapshot</small></article>
+        <article class="metric-card"><span>Current streak</span><strong id="metric-streak">0</strong><small>Completed-workout days</small></article>
+      </div>
+
+      <div class="portal-grid">
+        <article class="panel portal-panel">
+          <p class="eyebrow">Next quest</p>
+          <h3 id="next-quest-title">No planned quest found</h3>
+          <p id="next-quest-detail">Generate or schedule your next workout in the Android app.</p>
+          <a class="text-link" href="releases.html">See what is new in FitQuest →</a>
+        </article>
+        <article class="panel portal-panel">
+          <p class="eyebrow">Recovery vault</p>
+          <h3 id="backup-count">No backups found</h3>
+          <p id="backup-detail">When cloud recovery is enabled in the app, your private snapshots appear here.</p>
+          <button class="button secondary" id="download-backup" type="button" disabled>Download latest JSON</button>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>Restoring to a phone</strong>
+        <p>Open FitQuest → Profile → Backups. A phone with no irreplaceable local evidence can restore automatically after sign-in; an established phone always asks before merging.</p>
+      </div>
+      <p class="form-status" id="portal-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a></div>
+    <p>© <span data-current-year>2026</span> FitQuest. Your portal is a private summary, not a medical record.</p>
+  </footer>
+
+  <script src="runtime-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.101.1/dist/umd/supabase.min.js" crossorigin="anonymous"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>

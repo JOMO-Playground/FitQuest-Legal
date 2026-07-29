@@ -10,16 +10,12 @@
   <title>FitQuest — Your next worthwhile quest</title>
   <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/release.css">
+  <script src="js/site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
-    <nav aria-label="Primary">
-      <a href="#system">The system</a>
-      <a href="about.html">About</a>
-      <a href="support.html">Support</a>
-      <a class="nav-action" href="#testing">Closed testing</a>
-    </nav>
+    <nav aria-label="Primary"></nav>
   </header>
 
   <main>
@@ -29,7 +25,7 @@
         <h1>Know your next <span>worthwhile quest.</span></h1>
         <p class="lede">FitQuest turns your goals, readiness, completed work, and movement evidence into a progressive training path that is simple to follow and honest about what it knows.</p>
         <div class="actions">
-          <a class="button primary" href="#testing">Join the first test</a>
+          <a class="button primary" href="account.html">Open My Quest</a>
           <a class="button secondary" href="#system">See how it works</a>
         </div>
         <p class="fine">Android closed testing is being prepared. FitQuest is not a medical device.</p>
@@ -69,18 +65,45 @@
       </ol>
     </section>
 
+    <section class="section continuity">
+      <div class="continuity-copy">
+        <p class="eyebrow">One account, continuous evidence</p>
+        <h2>Your phone can change.<br>Your quest should not disappear.</h2>
+        <p class="section-intro">FitQuest remains local-first. When cloud recovery is enabled and you choose to back up, the website becomes a read-only window into your latest private snapshot.</p>
+        <div class="actions">
+          <a class="button primary" href="account.html">View your private portal</a>
+          <a class="button secondary" href="privacy.html">Read the data boundary</a>
+        </div>
+      </div>
+      <div class="portal-preview" aria-label="Private progress portal preview">
+        <div class="preview-top"><span>MY QUEST</span><small>PRIVATE SNAPSHOT</small></div>
+        <div class="preview-level"><strong>08</strong><span>LEVEL</span></div>
+        <div class="preview-progress"><span style="transform:scaleX(.68)"></span></div>
+        <div class="preview-stats"><span><strong>34</strong><small>quests</small></span><span><strong>128k</strong><small>steps</small></span><span><strong>12</strong><small>streak</small></span></div>
+      </div>
+    </section>
+
+    <section class="section release-strip">
+      <div>
+        <p class="eyebrow">Latest release</p>
+        <h2>2.1.0 is in internal testing.</h2>
+        <p>Play-qualified Android bundle, evidence-backed progression, Health Connect Steps, account recovery, and the Quest Cut identity.</p>
+      </div>
+      <a class="button secondary" href="releases.html">Read release notes</a>
+    </section>
+
     <section class="cta" id="testing">
-      <p class="eyebrow">Google Play closed test</p>
-      <h2>Help shape the first public-quality release.</h2>
-      <p>Testing access will open after account recovery, deletion, health-data disclosure, and release verification are complete.</p>
-      <a class="button primary" href="mailto:fitquestsupp0rt@gmail.com?subject=FitQuest%20closed%20test">Request tester access</a>
+      <p class="eyebrow">Google Play internal test</p>
+      <h2>Help prove the first public-quality release.</h2>
+      <p>The signed Android App Bundle is now on the internal-testing path. Tester access is tied to the enrolled Google account.</p>
+      <a class="button primary" href="mailto:fitquestsupp0rt@gmail.com?subject=FitQuest%20internal%20test">Request tester access</a>
     </section>
   </main>
 
   <footer>
     <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
     <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a></div>
-    <p>© 2026 FitQuest. Fitness guidance, not medical advice.</p>
+    <p>© <span data-current-year>2026</span> FitQuest. Fitness guidance, not medical advice.</p>
   </footer>
 </body>
 </html>
