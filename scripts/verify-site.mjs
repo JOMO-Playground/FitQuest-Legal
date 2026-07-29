@@ -32,6 +32,7 @@ const accountJs = read('js/account.js');
 const releases = read('releases.html');
 const css = read('css/release.css');
 const workflow = read('.github/workflows/deploy-pages.yml');
+const runtimeConfig = read('runtime-config.js');
 const privacy = read('privacy.html');
 const sitemap = read('sitemap.xml');
 
@@ -54,6 +55,8 @@ assert.doesNotMatch(css, /@import\s+url/);
 assert.match(workflow, /secrets\.FITQUEST_SUPABASE_ANON_KEY/);
 assert.match(workflow, /vars\.FITQUEST_SUPABASE_URL/);
 assert.match(workflow, /actions\/deploy-pages@v4/);
+assert.match(runtimeConfig, /sb_publishable_/);
+assert.doesNotMatch(runtimeConfig, /sb_secret_|service_role/i);
 assert.match(privacy, /website account portal stores its session in that browser/);
 assert.match(privacy, /read-only summary/);
 assert.match(sitemap, /releases\.html/);
@@ -75,5 +78,5 @@ console.log('FitQuest public website checks passed:', {
   responsiveNavigation: true,
   accountPortal: true,
   releaseCenter: true,
-  runtimeSecretsGeneratedAtDeploy: true,
+  browserSafeRuntimeConfig: true,
 });

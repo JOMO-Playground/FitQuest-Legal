@@ -1,8 +1,9 @@
 name: Deploy public FitQuest website
 
 on:
-  push:
-    branches: [main]
+  # Keep the artifact workflow available for the future. The repository
+  # currently publishes from main/root because the owner's hosted Actions
+  # runners are locked at the account level.
   workflow_dispatch:
 
 permissions:

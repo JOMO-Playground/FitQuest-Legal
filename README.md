@@ -8,22 +8,29 @@ This public repository is the deployable owner for:
 
 ## Live GitHub preview
 
-Every push to `main` runs `.github/workflows/deploy-pages.yml` and publishes the
-exact checked-in static site to:
+GitHub Pages publishes the exact checked-in static site from `main` at:
 
 `https://jomo-playground.github.io/FitQuest-Legal/`
 
-The workflow generates `runtime-config.js` during deployment from:
+`runtime-config.js` contains only the browser-safe Supabase project URL and
+publishable key. It is checked in so the portal remains deployable through
+branch-based Pages even when hosted Actions runners are unavailable. Supabase
+Row Level Security remains the authorization boundary.
+
+The optional artifact workflow can generate the same file during deployment
+from:
 
 - repository variable `FITQUEST_SUPABASE_URL`;
 - repository secret `FITQUEST_SUPABASE_ANON_KEY`.
 
-The generated runtime file is ignored and must never be committed. No
-service-role key belongs in a browser or GitHub Pages workflow.
+No secret key or service-role key belongs in a browser or GitHub Pages
+workflow.
 
 ## Local preview
 
-Create an ignored `runtime-config.js` from `runtime-config.example.js`, then run:
+The checked-in browser-safe `runtime-config.js` works locally. For another
+Supabase project, copy `runtime-config.example.js` and substitute that project's
+publishable configuration, then run:
 
 ```powershell
 python -m http.server 4173

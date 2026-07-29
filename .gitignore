@@ -1,1 +1,2 @@
-runtime-config.js
+# The browser-safe Supabase publishable key is tracked so branch-based GitHub
+# Pages remains available when hosted Actions runners are unavailable.
