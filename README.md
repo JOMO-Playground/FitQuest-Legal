@@ -4,7 +4,7 @@ This public repository is the deployable owner for:
 
 - the FitQuest product and release website;
 - Privacy, Terms, Support, deletion, and password-recovery routes;
-- the signed-in **My Quest** read-only backup portal.
+- the signed-in **My Progress** read-only backup portal.
 
 ## Live GitHub preview
 

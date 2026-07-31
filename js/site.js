@@ -18,7 +18,7 @@
     ['releases.html', 'Releases'],
     ['about.html', 'About'],
     ['support.html', 'Support'],
-    ['account.html', 'My Quest'],
+    ['account.html', 'My Progress'],
   ];
   nav.replaceChildren();
   items.forEach(function (item) {

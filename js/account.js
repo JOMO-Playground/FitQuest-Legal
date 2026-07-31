@@ -12,6 +12,7 @@
   var authTitle = document.getElementById('auth-title');
   var authCopy = document.getElementById('auth-copy');
   var authSubmit = document.getElementById('auth-submit');
+  var googleSignIn = document.getElementById('google-sign-in');
   var password = document.getElementById('password');
   var mode = 'sign-in';
   var client = null;
@@ -119,8 +120,8 @@
       : 'No active goal in this snapshot';
     document.getElementById('metric-streak').textContent = formatNumber((data.streak || {}).current_streak);
     document.getElementById('next-quest-title').textContent = nextQuest
-      ? nextQuest.routine_name || 'Planned quest'
-      : 'No planned quest found';
+      ? nextQuest.routine_name || 'Planned workout'
+      : 'No planned workout found';
     document.getElementById('next-quest-detail').textContent = nextQuest
       ? 'Scheduled for ' + safeDate(nextQuest.scheduled_date) + '. Open the Android app to review readiness and start.'
       : 'Generate or schedule your next workout in the Android app.';
@@ -195,6 +196,7 @@
       || typeof window.supabase.createClient !== 'function'
     ) {
       authForm.querySelectorAll('input,button').forEach(function (element) { element.disabled = true; });
+      googleSignIn.disabled = true;
       setStatus(authStatus, 'The account portal is being connected. Use the Android app for account access for now.', true);
       return;
     }
@@ -237,6 +239,23 @@
     }
     if (mode === 'sign-up' && !result.data.session) {
       setStatus(authStatus, 'Check your email to confirm the account, then return here to sign in.');
+    }
+  });
+
+  googleSignIn.addEventListener('click', async function () {
+    if (!client) return;
+    googleSignIn.disabled = true;
+    setStatus(authStatus, 'Opening Google sign-in…');
+    var result = await client.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: window.location.origin + window.location.pathname,
+        queryParams: { prompt: 'select_account' },
+      },
+    });
+    if (result.error) {
+      googleSignIn.disabled = false;
+      setStatus(authStatus, result.error.message, true);
     }
   });
 

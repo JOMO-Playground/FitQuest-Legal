@@ -138,6 +138,13 @@ footer p { grid-column: 1/-1; margin: 0; font-size: .78rem; }
 .auth-card label { margin-top: 8px; color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .04em; }
 .auth-card input { width: 100%; min-height: 54px; padding: 0 16px; border: 1px solid var(--border); border-radius: 13px; color: var(--text); background: #060807; transition: border-color .18s ease, box-shadow .18s ease; }
 .auth-card input:focus { border-color: rgba(88,225,176,.55); outline: 0; box-shadow: 0 0 0 4px rgba(16,185,129,.09); }
+.google-signin { display: block; width: 270px; height: 60px; margin: 24px auto 0; padding: 0; border: 0; border-radius: 30px; background: transparent; cursor: pointer; transition: opacity .18s ease, transform .18s ease; }
+.google-signin:hover { transform: translateY(-1px); }
+.google-signin:disabled { opacity: .48; cursor: wait; transform: none; }
+.google-signin img { display: block; width: 270px; height: 60px; }
+.auth-divider { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin: 20px 0 2px; color: var(--muted); }
+.auth-divider span { height: 1px; background: var(--border); }
+.auth-divider small { font-size: .76rem; }
 .text-button { display: block; margin: 20px auto 0; padding: 8px; border: 0; color: var(--accent-2); background: transparent; cursor: pointer; }
 .form-status { min-height: 26px; margin: 16px 0 0; color: var(--accent-2); font-size: .86rem; }
 .form-status.error { color: var(--danger); }

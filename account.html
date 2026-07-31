@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Sign in to the FitQuest account portal to view a private summary of your latest backed-up quest evidence.">
+  <meta name="description" content="Sign in to the FitQuest account portal to view a private summary of your latest backed-up training evidence.">
   <meta name="theme-color" content="#050807">
-  <title>My Quest — FitQuest</title>
+  <title>My Progress — FitQuest</title>
   <link rel="icon" href="brand-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/release.css">
   <script src="js/site.js" defer></script>
@@ -19,7 +19,7 @@
   <main class="account-shell">
     <section class="account-intro">
       <p class="eyebrow"><span class="signal"></span> Private account portal</p>
-      <h1>Your quest.<br><span>Still yours.</span></h1>
+      <h1>Your progress.<br><span>Still yours.</span></h1>
       <p class="lede">Review the latest evidence you deliberately backed up. The website never starts a workout and never writes into your phone’s local database.</p>
       <div class="trust-row">
         <span>Private bucket</span>
@@ -33,9 +33,13 @@
         <button class="auth-tab active" id="sign-in-tab" type="button" role="tab" aria-selected="true">Sign in</button>
         <button class="auth-tab" id="sign-up-tab" type="button" role="tab" aria-selected="false">Create account</button>
       </div>
-      <p class="eyebrow" id="auth-kicker">Continue your quest</p>
+      <p class="eyebrow" id="auth-kicker">Continue your training</p>
       <h2 id="auth-title">Sign in securely.</h2>
       <p class="auth-copy" id="auth-copy">Use the same email and password as the FitQuest Android app.</p>
+      <button class="google-signin" id="google-sign-in" type="button" aria-label="Sign in with Google">
+        <img src="google-signin-dark.png" alt="Sign in with Google" width="270" height="60">
+      </button>
+      <div class="auth-divider" aria-hidden="true"><span></span><small>or use email</small><span></span></div>
       <form id="auth-form" novalidate>
         <label for="email">Email</label>
         <input id="email" name="email" type="email" autocomplete="email" required>
@@ -74,7 +78,7 @@
       </div>
 
       <div class="metric-grid" aria-label="Backed-up fitness summary">
-        <article class="metric-card"><span>Completed quests</span><strong id="metric-workouts">0</strong><small id="metric-training-time">0 training minutes</small></article>
+        <article class="metric-card"><span>Completed workouts</span><strong id="metric-workouts">0</strong><small id="metric-training-time">0 training minutes</small></article>
         <article class="metric-card"><span>Measured steps</span><strong id="metric-steps">0</strong><small>From backed-up daily evidence</small></article>
         <article class="metric-card"><span>Active goals</span><strong id="metric-goals">0</strong><small id="metric-goal-detail">No active goal in this snapshot</small></article>
         <article class="metric-card"><span>Current streak</span><strong id="metric-streak">0</strong><small>Completed-workout days</small></article>
@@ -82,8 +86,8 @@
 
       <div class="portal-grid">
         <article class="panel portal-panel">
-          <p class="eyebrow">Next quest</p>
-          <h3 id="next-quest-title">No planned quest found</h3>
+          <p class="eyebrow">Next workout</p>
+          <h3 id="next-quest-title">No planned workout found</h3>
           <p id="next-quest-detail">Generate or schedule your next workout in the Android app.</p>
           <a class="text-link" href="releases.html">See what is new in FitQuest →</a>
         </article>
