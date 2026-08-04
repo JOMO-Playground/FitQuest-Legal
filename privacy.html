@@ -18,7 +18,7 @@
   <main class="document">
     <p class="eyebrow">Legal</p>
     <h1>Privacy Policy</h1>
-    <p class="document-lede">Effective 31 July 2026. This policy describes the FitQuest Android application and this website. It does not claim that optional services are active when a particular build has them disabled.</p>
+    <p class="document-lede">Effective 4 August 2026. This policy describes the FitQuest Android application and this website, including the account recovery, Coach, Health Connect, and active-GPS features enabled in the current testing release.</p>
 
     <section class="callout">
       <strong>Privacy at a glance</strong>
@@ -41,14 +41,14 @@
       <p>When you are signed in, connected, and choose cloud Coach, your message and a bounded set of relevant fitness context are sent over an encrypted connection to a Supabase Edge Function. That function authenticates the request and sends it to a configured free text model through OpenRouter. Do not submit medical records or information you do not want processed by those services. Offline Coach guidance remains on the device and is labelled as offline.</p>
 
       <h2>5. Activity, sensors, and location</h2>
-      <p>With permission, FitQuest can read step information from Android activity sensors or Health Connect. Health Connect permissions are read-only and limited to data types the feature visibly uses. A foreground sensor fallback may cover only the time FitQuest is open and is labelled as partial.</p>
-      <p>Location is requested when you start a GPS activity. FitQuest uses location samples to calculate and display that activity. The first closed-testing release does not use background location for passive step tracking. Route data remains local unless a future, separately disclosed backup feature includes it and you enable that feature.</p>
+      <p>With permission, FitQuest reads only the Health Connect <strong>Steps</strong> record needed to show an all-day step total. Health Connect access is read-only. Health Connect or your device may continue collecting independently while FitQuest is closed; FitQuest refreshes the aggregate while open. A foreground Android sensor fallback may cover only the time FitQuest is open and is labelled as partial. The two sources are reconciled instead of added together.</p>
+      <p>FitQuest requests location only after you explicitly start an outdoor walk or run. During that active session, it uses location samples to calculate and save route evidence, distance, pace, speed, and elevation. If you grant background location and leave background continuation enabled, collection continues while FitQuest is minimized or the screen is locked and Android displays a persistent FitQuest notification. Collection stops when you pause, finish, or discard the session, disable background continuation, or Android force-stops the app. FitQuest never starts GPS on its own, does not collect location outside a user-started session, and does not use location for passive step tracking.</p>
 
       <h2>6. Photos and media</h2>
       <p>Profile and progress photos you choose are copied into app-owned device storage. FitQuest exercise guidance can use bundled reviewed images or fetch reviewed public-domain exercise images from a pinned GitHub-hosted repository. A remote image request necessarily reveals standard network information such as IP address and user agent to the host.</p>
 
       <h2>7. Cloud backup and the account portal</h2>
-      <p>Cloud backup is controlled by a release feature flag and remains disabled until the app explicitly says otherwise. When enabled, FitQuest can upload a JSON snapshot to a private Supabase Storage path scoped to the signed-in account. Established devices require a manual restore; a device without irreplaceable local evidence may restore the latest verified snapshot automatically after sign-in.</p>
+      <p>Cloud recovery is enabled in the current testing release for signed-in accounts. FitQuest can upload a JSON snapshot—including fitness records and any saved user-started GPS routes—to a private Supabase Storage path scoped to that account. A snapshot may be created after startup or when the app enters the background, but no more often than once every six hours. An established device is never silently replaced; a device without irreplaceable local evidence may restore the latest verified snapshot automatically after sign-in. Manual backup and restore controls are available in Settings.</p>
       <p>After you sign in on the website, the My Progress portal can download your latest account-scoped snapshot into browser memory and show a read-only summary such as level, workouts, steps, goals, streak, and planned workout. The portal does not write to the app database or restore a phone. You may deliberately download the JSON snapshot. The pinned Supabase browser library is delivered by jsDelivr, which receives ordinary request information such as IP address and user agent.</p>
 
       <h2>8. Purchases</h2>
@@ -62,7 +62,7 @@
 
       <h2>11. Retention and deletion</h2>
       <p>Local data remains until you delete it in FitQuest or uninstall the app, subject to Android backup behaviour outside our control. Auth data remains until the account is deleted. Optional backups remain until deleted with the account or under the applicable service-retention process. Service providers may retain limited security, billing, or legal records under their own obligations.</p>
-      <p>Use <strong>Profile → Data &amp; Privacy</strong> to export or erase local data. Signed-in users can request account deletion there. You can also follow the public instructions on the <a href="delete-account.html">Delete account page</a>.</p>
+      <p>Use <strong>Profile → Settings → Data &amp; Privacy</strong> to export or erase local data. Signed-in users can request account deletion there. You can also follow the public instructions on the <a href="delete-account.html">Delete account page</a>.</p>
 
       <h2>12. Security</h2>
       <p>We use platform application isolation, protected session storage, encrypted transport for network features, private storage policies, server-side authentication, and release scanning. No system is perfectly secure. Keep your device and email account protected and contact us if you believe your account is at risk.</p>
@@ -79,7 +79,7 @@
   </main>
   <footer>
     <a class="brand" href="index.html"><img src="brand-mark.svg" alt=""><span>FitQuest</span></a>
-    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="support.html">Support</a></div>
+    <div><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="delete-account.html">Delete account</a><a href="sources.html">Sources</a><a href="support.html">Support</a></div>
     <p>© 2026 FitQuest.</p>
   </footer>
 </body>
